@@ -16,6 +16,7 @@ body {
   margin: 0;
   font-size: 1.1em;
   background: var(--bg-color);
+  color: var(--text-color);
 }
 ul, li, p, h1, h2, h3, h4 {
   margin: 0;

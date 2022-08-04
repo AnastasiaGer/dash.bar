@@ -1,17 +1,18 @@
 import Logo from '../Logo/Logo'
 import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
+import dashbordIcon from '../../assets/dashboard.svg';
+
 function Sidebar() {
   return (
     <div className='sidebar'>
       <div className='sidebar-content'>
-        <div className='logo'>
-          <Logo />
-        </div>
+        <Logo />
         <nav className='links'>
           <ul>
             <li>
               <NavLink exact to='/' >
+              <img src={dashbordIcon} alt="logo" />
                 <span>Dashbord</span>
               </NavLink>
             </li>
