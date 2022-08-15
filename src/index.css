@@ -1,24 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 
 /* variables */
 :root {
-  --heading-color: #373A48;
-  --text-color: #373A48;
-  --primary-color: #A5AED9;
+  --heading-color: #373a48;
+  --text-color: #373a48;
+  --primary-color: #a5aed9;
   --highlight-color: #d13267;
-  --bg-color: #D2D6EC;
-  ;
+  --bg-color: #d2d6ec;
 }
 
 /* base styles */
 body {
-  font-family: 'ABeeZee', sans-serif;
+  font-family: "ABeeZee", sans-serif;
   margin: 0;
   font-size: 1.1em;
-  background: var(--bg-color);
+  background: #ffffff;
   color: var(--text-color);
 }
-ul, li, p, h1, h2, h3, h4 {
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -33,17 +38,23 @@ ul {
   display: inline-block;
 }
 .btn {
-  background: #fff;
+  background: var(--primary-color);
   padding: 8px 12px;
   border-radius: 4px;
-  color: var(--primary-color);
+  color: var(--text-color);
   cursor: pointer;
   font-size: 1em;
   border: 1px solid var(--primary-color);
+  box-shadow:  7px 7px 23px #7d84a5,
+             -7px -7px 23px #cdd8ff;
 }
 .btn:hover {
-  color: #fff;
-  background-color: var(--primary-color);
+  box-shadow:  13px 13px 26px #616780,
+  -13px -13px 26px #e9f5ff;
+}
+
+.btn:active {
+  box-shadow: inset 7px 7px 23px #7d84a5, inset -7px -7px 23px #cdd8ff;
 }
 
 /* forms */
@@ -55,7 +66,8 @@ label span {
   display: block;
   margin-bottom: 6px;
 }
-input, textarea {
+input,
+textarea {
   padding: 8px 6px;
   font-size: 1em;
   color: #777;
