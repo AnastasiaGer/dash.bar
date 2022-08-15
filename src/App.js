@@ -1,41 +1,77 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar'
-import Dashboard from './pages/dashboard/Dashboard';
-import Create from './pages/create/Create'
-import Project from './pages/project/Project'
-import NoPage from './pages/nopage/NoPage'
-import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
-import Navbar from './components/Navbar/Navbar'
-import Analytics from './pages/analytics/Analytics'
-import Reports from './pages/reports/Reports'
-import Profile from './pages/profile/Profile'
-import Inbox from './pages/inbox/Inbox'
-import Settings from './pages/settings/Settings'
+import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Create from "./pages/create/Create";
+import Project from "./pages/project/Project";
+import NoPage from "./pages/nopage/NoPage";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import Navbar from "./components/Navbar/Navbar";
+import Analytics from "./pages/analytics/Analytics";
+import Reports from "./pages/reports/Reports";
+import Profile from "./pages/profile/Profile";
+import Inbox from "./pages/inbox/Inbox";
+import Settings from "./pages/settings/Settings";
 
 function App() {
+  const { authIsReady, user } = useAuthContext();
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Sidebar />
-        <div className="container">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/reports" element={<Reports />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/inbox" element={<Inbox />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="create" element={<Create />} />
-            <Route path="project/:id" element={<Project />} />
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="*" element={<NoPage />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      {authIsReady && (
+        <BrowserRouter>
+          {user && <Sidebar />}
+          <div className="container">
+            <Navbar />
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={!user ? <Navigate to="/login" /> : <Dashboard />}
+              />
+              <Route
+                path="/analytics"
+                element={!user ? <Navigate to="/login" /> : <Analytics />}
+              />
+              <Route
+                path="/reports"
+                element={!user ? <Navigate to="/login" /> : <Reports />}
+              />
+              <Route
+                path="/profile"
+                element={!user ? <Navigate to="/login" /> : <Profile />}
+              />
+              <Route
+                path="/inbox"
+                element={!user ? <Navigate to="/login" /> : <Inbox />}
+              />
+              <Route
+                path="/settings"
+                element={!user ? <Navigate to="/login" /> : <Settings />}
+              />
+              <Route
+                path="/create"
+                element={!user ? <Navigate to="/login" /> : <Create />}
+              />
+              <Route
+                path="/projects/:id"
+                element={!user ? <Navigate to="/login" /> : <Project />}
+              />
+              <Route
+                path="/login"
+                element={user ? <Navigate to="/" /> : <Login />}
+              />
+              <Route
+                path="/signup"
+                element={user ? <Navigate to="/" /> : <Signup />}
+              />
+              <Route path="*" element={<NoPage />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      )}
     </div>
   );
 }

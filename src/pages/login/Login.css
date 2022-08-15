@@ -1,0 +1,29 @@
+.auth-form {
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 40px;
+  border: 1px solid #ddd;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.login-btn {
+  margin-left: 275px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  box-shadow: 5px 5px 17px #666666, -5px -5px 17px #ffffff;
+}
+.login-btn:hover {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 10px #999999, -5px -5px 10px #ffffff;
+}
+
+.login-btn:active {
+  box-shadow: inset 5px 5px 10px #999999, inset -5px -5px 10px #ffffff;
+}

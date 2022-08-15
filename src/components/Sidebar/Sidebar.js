@@ -1,6 +1,9 @@
 import Logo from "../Logo/Logo";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import { useLogout } from '../../hooks/useLogout'
+import { useAuthContext } from '../../hooks/useAuthContext'
+
 import dashbordIcon from "../../assets/dashboard.svg";
 import analyticsIcon from "../../assets/analytics.svg";
 import reportsIcon from "../../assets/reports.svg";
@@ -9,6 +12,8 @@ import inboxIcon from "../../assets/message.svg";
 import settingsIcon from "../../assets/settings.svg";
 
 function Sidebar() {
+  const { logout, isPending } = useLogout()
+  const { user } = useAuthContext()
   return (
     <div className="sidebar">
       <div className="sidebar-content">
@@ -56,9 +61,16 @@ function Sidebar() {
             </li>
           </ul>
           <div>
-            <button className="btn">Logout</button>
+          {user && (
+          <div>
+            {!isPending && <button className="btn" onClick={logout}>Logout</button>}
+            {isPending && <button className="btn" disabled>Logging out...</button>}
+          </div>
+        )}
           </div>
         </nav>
+        <p className="sidebar-p">BeautIful UI components, designed 
+handcrafted with eye to the detail.</p>
       </div>
     </div>
   );

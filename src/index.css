@@ -44,7 +44,7 @@ ul {
   color: var(--text-color);
   cursor: pointer;
   font-size: 1em;
-  border: 1px solid var(--primary-color);
+  border: none;
   box-shadow:  7px 7px 23px #7d84a5,
              -7px -7px 23px #cdd8ff;
 }
