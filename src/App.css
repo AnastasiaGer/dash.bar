@@ -1,8 +1,10 @@
 .App {
   display: flex;
+  background: var(--bg-color);
 }
 
 .App .container{
   flex-grow: 1;
   padding: 0 60px;
 }
+

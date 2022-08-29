@@ -24,7 +24,7 @@ function App() {
         <BrowserRouter>
           {user && <Sidebar />}
           <div className="container">
-            <Navbar />
+          {user && <Navbar />}
             <Routes>
               <Route
                 exact
