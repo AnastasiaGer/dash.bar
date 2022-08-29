@@ -1,8 +1,19 @@
-.analytics {
+.create {
   height: 85vh;
   border-radius: 15px;
   background: #ffffff;
   box-shadow:  -5px -5px 24px #666666,
                5px 5px 24px #ffffff;
   padding: 20px;
+}
+
+.create-form {
+  max-width: 600px;
+}
+
+.create-title{
+  font-weight: 400;
+font-size: 28px;
+line-height: 33px;
+color: #000000;
 }

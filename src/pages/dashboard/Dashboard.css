@@ -1,52 +1,17 @@
 .dashboard {
   height: 85vh;
-  background-color: #ffffff;
   border-radius: 15px;
+  background: #ffffff;
+  box-shadow:  -5px -5px 24px #666666,
+               5px 5px 24px #ffffff;
   padding: 20px;
 }
-.header {
-  display: flex;
-  justify-content: space-between;
-}
 
-.header-navigation {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.header-title {
+.create-link{
+  display: inline-block;
+  background: #D9E1E7;
   color: #06152B;
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.header-time{
-  color: #809FB8;
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.search {
-  width: 200px;
-  height: 60px;
+  padding: 15px 70px;
   border-radius: 15px;
-  border: 1px solid #D9E1E7;
-  margin-right: 15px;
-}
-
-.notifications {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width: 60px;
-  height: 60px;
-  border-radius: 25%;
-  border: 1px solid #D9E1E7;
-  margin-right: 15px;
-}
-
-.notifications img{
-  object-fit: contain;
+  text-decoration: none;
 }
