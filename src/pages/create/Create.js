@@ -116,7 +116,7 @@ export default function Create() {
 
     await addDocument(task)
     if (!response.error) {
-      navigate('/dashbord');
+      navigate('/');
     }
   }
   return (
