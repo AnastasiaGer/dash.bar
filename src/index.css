@@ -77,7 +77,7 @@ textarea {
   border-radius: 4px;
 }
 textarea {
-  min-height: 160px;
+  min-height: 120px;
 }
 .error {
   color: red;
