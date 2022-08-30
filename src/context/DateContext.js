@@ -1,15 +1,19 @@
-import { createContext } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import Moment from 'moment';
 
 export const DateContext = createContext()
 export const DateConsumer = DateContext.Consumer;
 export const DateContextProvider = ({children}) => {
   const formatDate = Moment().format("Do MMM YYYY");
-  const formatTime = Moment().format('hh:mm A');
+
+  const [time, setTime] = useState('')
   
-console.log(formatTime)
+  useEffect(() => {
+    setInterval(() => setTime(Moment().format('hh:mm A')), 1000);
+  }, []);
+
   return (
-    <DateContext.Provider value={{ formatDate, formatTime }}>
+    <DateContext.Provider value={{ formatDate, time }}>
       { children }
     </DateContext.Provider>
   )

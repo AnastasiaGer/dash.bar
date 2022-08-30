@@ -2,27 +2,27 @@
   /* height: 85vh; */
   border-radius: 15px;
   background: #ffffff;
-  box-shadow:  -5px -5px 24px #666666,
-               5px 5px 24px #ffffff;
+  box-shadow: -5px -5px 24px #666666,
+    5px 5px 24px #ffffff;
   padding: 20px;
 }
 
 .create-form {
-  max-width: 1200px;
+  max-width: 1000px;
   min-height: 750px;
   position: relative;
 }
 
-.create-title{
+.create-title {
   font-weight: 400;
-font-size: 28px;
-line-height: 33px;
-color: #000000;
+  font-size: 22px;
+  line-height: 33px;
+  color: #000000;
 }
 
-.create-btn{
+/* .create-btn {
   display: block;
   position: absolute;
   bottom: 10px;
   right: -205px;
-}
+} */

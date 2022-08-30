@@ -4,7 +4,7 @@ import "./Sidebar.css";
 import { useLogout } from '../../hooks/useLogout'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
-import dashbordIcon from "../../assets/dashboard.svg";
+import dashboardIcon from "../../assets/dashboard.svg";
 import analyticsIcon from "../../assets/analytics.svg";
 import reportsIcon from "../../assets/reports.svg";
 import profileIcon from "../../assets/profile.svg";
@@ -21,9 +21,9 @@ function Sidebar() {
         <nav className="links">
           <ul>
             <li>
-              <NavLink exact to="/dashbord">
-                <img src={dashbordIcon} alt="dashbordIcon" />
-                <span>Dashbord</span>
+              <NavLink exact to="/dashboard">
+                <img src={dashboardIcon} alt="dashboardIcon" />
+                <span>Dashboard</span>
               </NavLink>
             </li>
             <li>

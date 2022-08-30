@@ -78,11 +78,15 @@ export default function Create() {
     setFormError(null)
 
     if (!category) {
-      setFormError('Please select a project category.')
+      setFormError('Please select a task category.')
+      return
+    }
+    if (!priority) {
+      setFormError('Please select a task priority.')
       return
     }
     if (assignedUsers.length < 1) {
-      setFormError('Please assign the project to at least 1 user')
+      setFormError('Please assign the task to at least 1 user')
       return
     }
 
@@ -99,7 +103,7 @@ export default function Create() {
       id: user.uid
     }
 
-    const project = {
+    const task = {
       name,
       details,
       assignedUsersList, 
@@ -110,7 +114,7 @@ export default function Create() {
       comments: []
     }
 
-    await addDocument(project)
+    await addDocument(task)
     if (!response.error) {
       navigate('/dashbord');
     }

@@ -28,7 +28,7 @@ function App() {
             <Routes>
               <Route
                 exact
-                path="/"
+                path="/dashboard"
                 element={!user ? <Navigate to="/login" /> : <Dashboard />}
               />
               <Route
